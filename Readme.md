@@ -1,7 +1,6 @@
 #### PROJET TAS
 >  ##### Réalisé par : 
 >  Sofiane BELKHIR
->  David HERZOG   
 
 
 ### Code du projet
@@ -19,6 +18,6 @@
 1. Dans un terminal lancer les commandes suivantes `make clean` puis  `make cleanall`
    
 ## Information importante
-Une expression est évaluer récursivement sachant que dans notre cas, l'éxpression est évalier __4__ fois.
+Une expression est évaluer récursivement sachant que dans notre cas, l'éxpression est évalué  __4__ fois.
 
 Pour modifier ce critére il suffit juste de modifier la ligne __748__ du fichier `typeur.ml`.
