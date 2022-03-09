@@ -1,0 +1,150 @@
+======================
+
+Génération Equation ===>(but, (T1 -> T2)) (T2, T1) 
+(λx. x) ***TYPABLE*** avec le type (T2 -> T2)
+Résultats de l'Evaluation ====> (λx. x)
+======================
+
+Génération Equation ===>(but, (T4 -> T5)) (T5, (T6 -> T7)) (T7, T4) 
+(λx. (λy. x)) ***TYPABLE*** avec le type (T7 -> (T6 -> T7))
+Résultats de l'Evaluation ====> (λx. (λy. x))
+======================
+
+Génération Equation ===>(but, Nat) 
+5 ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 5
+======================
+
+Génération Equation ===>(but, Nat) (Nat, Nat) (Nat, Nat) 
+(3 + 5) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 8
+======================
+
+Génération Equation ===>(but, (T10 -> T11)) (T11, (T12 -> T13)) (T13, Nat) (Nat, T10) (Nat, T12) 
+(λx. (λy. (x + y))) ***TYPABLE*** avec le type (Nat -> (Nat -> Nat))
+Résultats de l'Evaluation ====> (λx. (λy. (x + y)))
+======================
+
+Génération Equation ===>(but, Nat) (Nat, Nat) (Nat, Nat) 
+(5 - 3) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 2
+======================
+
+Génération Equation ===>
+[Nil] ***PAS TYPABLE*** : but introuvable
+======================
+
+Génération Equation ===>(but, [T35]) (T35, Nat) ([T35], [T36]) (T36, Nat) 
+[( 5 , ( 3 , Nil ) )] ***TYPABLE*** avec le type [Nat]
+Résultats de l'Evaluation ====> [( 5 , ( 3 , Nil ) )]
+======================
+
+Génération Equation ===>
+Head [[Nil]] ***PAS TYPABLE*** : but introuvable
+======================
+
+Génération Equation ===>(but, [T37]) (T37, Nat) ([T37], [T38]) (T38, Nat) 
+Head [[( 5 , ( 3 , Nil ) )]] ***TYPABLE*** avec le type [Nat]
+Résultats de l'Evaluation ====> 5
+======================
+
+Génération Equation ===>
+Tail [[Nil]] ***PAS TYPABLE*** : but introuvable
+======================
+
+Génération Equation ===>(but, [T39]) (T39, Nat) ([T39], [T40]) (T40, Nat) 
+Tail [[( 1 , Nil )]] ***TYPABLE*** avec le type [Nat]
+Résultats de l'Evaluation ====> [Nil]
+======================
+
+Génération Equation ===>(but, [T41]) (T41, Nat) ([T41], [T42]) (T42, Nat) ([T42], [T43]) (T43, Nat) 
+Tail [[( 5 , ( 3 , Nil ) )]] ***TYPABLE*** avec le type [Nat]
+Résultats de l'Evaluation ====> [( 3 , Nil )]
+======================
+
+Génération Equation ===>(but, (T16 -> T17)) (T17, (T18 -> T19)) (T19, (T20 -> T21)) ((T23 -> (T22 -> T21)), T16) (T23, T20) ((T24 -> T22), T18) (T24, T20) 
+(λx. (λy. (λz. ((x z) (y z))))) ***TYPABLE*** avec le type ((T24 -> (T22 -> T21)) -> ((T24 -> T22) -> (T24 -> T21)))
+Résultats de l'Evaluation ====> (λx. (λy. (λz. ((x z) (y z)))))
+======================
+
+Génération Equation ===>((T28 -> but), (T29 -> T30)) (T30, Nat) (Nat, T29) (Nat, Nat) (T28, Nat) 
+((λx. (x + 1)) 3) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 4
+======================
+
+Génération Equation ===>(but, (T32 -> T33)) (T33, Nat) (Nat, T32) (Nat, T32) 
+(λx. (x + x)) ***TYPABLE*** avec le type (Nat -> Nat)
+Résultats de l'Evaluation ====> (λx. (x + x))
+======================
+
+Génération Equation ===>(but, Nat) (Nat, Nat) (T44, Nat) (T44, Nat) 
+(IfZ (0) then 1 else 2) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 1
+======================
+
+Génération Equation ===>(but, Nat) (Nat, Nat) (T45, Nat) (T45, Nat) 
+(IfZ (1) then 2 else 3) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 3
+======================
+
+Génération Equation ===>(but, Nat) (Nat, Nat) (T46, Nat) (Nat, Nat) (Nat, Nat) (T46, Nat) (Nat, Nat) (Nat, Nat) 
+(IfZ (0) then (3 + 5) else (5 - 3)) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 8
+======================
+
+Génération Equation ===>(but, Nat) (Nat, Nat) (T47, Nat) (Nat, Nat) (Nat, Nat) (T47, Nat) (Nat, Nat) (Nat, Nat) 
+(IfZ (1) then (3 + 5) else (5 - 3)) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 2
+======================
+
+Génération Equation ===>(Nat, Nat) (T48, Nat) (Nat, Nat) (Nat, Nat) (T48, [T49]) (T49, Nat) ([T49], [T50]) (T50, Nat) 
+(IfZ (1) then (3 + 5) else Tail [[( 1 , Nil )]]) ***PAS TYPABLE*** : type entier non-unifiable avec [T49]
+======================
+
+Génération Equation ===>(but, Nat) (T51, Nat) (Nat, Nat) (Nat, Nat) (T51, Nat) (Nat, Nat) (Nat, Nat) 
+(IfEm ([Nil]) then (3 + 5) else (5 - 3)) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 8
+======================
+
+Génération Equation ===>(but, Nat) ((∀T52. [T52]), [T53]) (T53, Nat) ([T53], [T54]) (T54, Nat) (T52, Nat) (Nat, Nat) (Nat, Nat) (T52, Nat) (Nat, Nat) (Nat, Nat) 
+(IfEm ([( 5 , ( 3 , Nil ) )]) then (3 + 5) else (5 - 3)) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 2
+======================
+
+Génération Equation ===>(but, T55) (T55, (T57 -> T58)) (T58, Nat) (Nat, T57) (T59, Nat) (T59, Nat) ((T60 -> Nat), T56) (T60, Nat) (Nat, T57) (Nat, Nat) (Nat, T57) 
+Fix(f,(λx. (IfZ (x) then 0 else ((f (x - 1)) + x)))) ***TYPABLE*** avec le type (Nat -> Nat)
+Résultats de l'Evaluation ====> Fix(T75,(λT76. (IfZ (T76) then 0 else ((Fix(T77,(λT78. (IfZ (T78) then 0 else ((T77 (T78 - 1)) + T78)))) (T76 - 1)) + T76))))
+======================
+
+Génération Equation ===>(but, Nat) (Nat, Nat) (Nat, Nat) 
+(Let x = (5 - 3) in (x + 2)) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 4
+======================
+
+Génération Equation ===>(but, ref(T79)) (T79, Nat) 
+Ref(2) ***TYPABLE*** avec le type ref(Nat)
+Résultats de l'Evaluation ====> RHO1
+======================
+
+Génération Equation ===>(but, (T80 -> T81)) (T81, ref(T82)) (T82, T80) 
+(λx. Ref(x)) ***TYPABLE*** avec le type (T82 -> ref(T82))
+Résultats de l'Evaluation ====> (λx. Ref(x))
+======================
+
+Génération Equation ===>(but, T84) (ref(T84), ref(T85)) (T85, Nat) 
+!(Ref(2)) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 2
+======================
+
+Génération Equation ===>(but, unit) ((∀T86. (ref(T86) -> (T86 -> unit))), ref(T87)) (T87, Nat) 
+(Ref(2) := 3) ***TYPABLE*** avec le type unit
+Résultats de l'Evaluation ====> ()
+======================
+
+Génération Equation ===>(but, T91) (ref(T91), ref(Nat)) 
+(Let x = Ref(2) in (Let y = Ref(3) in (Let z = (x := !(y)) in !(x)))) ***TYPABLE*** avec le type Nat
+Résultats de l'Evaluation ====> 3
+======================
+
+Génération Equation ===>(but, Nat) (Nat, [T95]) ([T95], T96) (ref(T96), ref([Nat])) (Nat, Nat) 
+(Let l = Ref([( 5 , Nil )]) in (Let _ = (l := [( (λz. z) , Nil )]) in (Head [!(l)] + 2))) ***PAS TYPABLE*** : type entier non-unifiable avec [T95]

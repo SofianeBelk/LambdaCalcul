@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/sofianebelkhir/Documents/TAS/projet/LambdaExpression/Typeur_V2'
+ocamlbuild  src/main.native
+make: Leaving directory `/Users/sofianebelkhir/Documents/TAS/projet/LambdaExpression/Typeur_V2'
+ 
